@@ -413,4 +413,4 @@ echo
 
 # Don't convert paths on gitbash on windows, as that can mangle user paths and cmd options.
 # See https://github.com/buildkite-plugins/docker-buildkite-plugin/issues/81 for more information.
-( if is_windows ; then export MSYS_NO_PATHCONV=1; fi && docker run "${args[@]}" )
+if is_windows ; then export MSYS_NO_PATHCONV=1; fi && docker run "${args[@]}" || exit $?
