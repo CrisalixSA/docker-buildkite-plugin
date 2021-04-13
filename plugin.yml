@@ -23,6 +23,8 @@ configuration:
       type: array
     image:
       type: string
+    name:
+      type: string
     ipc:
       type: string
     mount-buildkite-agent:

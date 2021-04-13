@@ -288,6 +288,11 @@ if [[ -n "${BUILDKITE_PLUGIN_DOCKER_NETWORK:-}" ]] ; then
   args+=("--network" "${BUILDKITE_PLUGIN_DOCKER_NETWORK:-}")
 fi
 
+# Support docker container name
+if [[ -n "${BUILDKITE_PLUGIN_DOCKER_NAME:-}" ]] ; then
+  args+=("--name" "${BUILDKITE_PLUGIN_DOCKER_NAME:-}")
+fi
+
 # Support docker run --pid
 if [[ -n "${BUILDKITE_PLUGIN_DOCKER_PID:-}" ]] ; then
   args+=("--pid" "${BUILDKITE_PLUGIN_DOCKER_PID:-}")
