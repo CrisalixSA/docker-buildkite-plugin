@@ -111,6 +111,12 @@ Example: `node:7`
 
 ### Optional
 
+### `name` (optional, string)
+
+The name of the Docker container to be created. See https://docs.docker.com/engine/reference/run/#name---name for more details. By default, no name is set.
+
+Example: `container-joe`
+
 ### `add-host` (optional, array)
 
 Additional lines can be added to `/etc/hosts` in the container, in an array of mappings. See https://docs.docker.com/engine/reference/run/#managing-etchosts for more details.
