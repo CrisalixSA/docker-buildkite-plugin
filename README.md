@@ -209,6 +209,12 @@ Join the container to the docker network specified. The network will be created 
 
 Example: `test-network`
 
+### `cap-add` (optional, string)
+
+Add Linux fine-grain capabilities. See https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities for more details. By default, no fine-grain capabilities are given.
+
+Example: `SYS_ADMIN`
+
 ### `pid` (optional, string)
 
 PID namespace provides separation of processes. The PID Namespace removes the view of the system processes, and allows process ids to be reused including pid 1. See https://docs.docker.com/engine/reference/run/#pid-settings---pid for more details. By default, all containers have the PID namespace enabled.

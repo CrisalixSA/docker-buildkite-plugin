@@ -293,6 +293,11 @@ if [[ -n "${BUILDKITE_PLUGIN_DOCKER_NAME:-}" ]] ; then
   args+=("--name" "${BUILDKITE_PLUGIN_DOCKER_NAME:-}")
 fi
 
+# Support docker run --cap-add
+if [[ -n "${BUILDKITE_PLUGIN_DOCKER_CAP_ADD:-}" ]] ; then
+  args+=("--cap-add" "${BUILDKITE_PLUGIN_DOCKER_CAP_ADD:-}")
+fi
+
 # Support docker run --pid
 if [[ -n "${BUILDKITE_PLUGIN_DOCKER_PID:-}" ]] ; then
   args+=("--pid" "${BUILDKITE_PLUGIN_DOCKER_PID:-}")

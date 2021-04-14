@@ -35,6 +35,8 @@ configuration:
       type: boolean
     network:
       type: string
+    cap-add:
+      type: string
     pid:
       type: string
     gpus:
