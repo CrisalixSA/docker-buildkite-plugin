@@ -95,8 +95,6 @@ else
   args+=("-i")
 fi
 
-args+=("--rm")
-
 # Support docker run --init.
 if [[ "${BUILDKITE_PLUGIN_DOCKER_INIT:-$init_default}" =~ ^(true|on|1)$ ]] ; then
     args+=("--init")
@@ -296,6 +294,11 @@ fi
 # Support docker run --cap-add
 if [[ -n "${BUILDKITE_PLUGIN_DOCKER_CAP_ADD:-}" ]] ; then
   args+=("--cap-add" "${BUILDKITE_PLUGIN_DOCKER_CAP_ADD:-}")
+fi
+
+# Support docker run --rm
+if [[ -z "${BUILDKITE_PLUGIN_DOCKER_KEEP_CONTAINER:-}" ]] ; then
+  args+=("--rm")
 fi
 
 # Support docker run --pid
